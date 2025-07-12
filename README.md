@@ -23,3 +23,29 @@ Use the following settings when creating a new project in Xilinx ISE 14.7:
 ## Simulation
 
 All modules include testbenches with complete functional coverage using `assert`. Simulations are run using ISim. Extend simulation time if necessary (e.g., 20 µs) to allow testbench loops to complete.
+
+## Getting Started with Xilinx ISE
+
+1. **Create a new project**  
+   - Open ISE → `File > New Project`
+   - Name the project (e.g. `vhdl-lab`) and select a folder
+   - Set FPGA configuration as listed above
+
+2. **Add a VHDL source file**  
+   - Right-click the project → `New Source` → VHDL Module  
+   - Example: `mux4to1.vhd`  
+   - You may define ports during creation or edit them later manually
+
+3. **Add a testbench**  
+   - `New Source` → VHDL Test Bench  
+   - Example: `tb_mux4to1.vhd`  
+   - Choose the module to test when prompted
+
+4. **Simulate**  
+   - Switch to `Behavioral Simulation` view in the hierarchy pane  
+   - Right-click the testbench → `Simulate Behavioral Model`  
+   - Set simulation run time to at least 20 µs (via `Simulation Properties`)
+
+5. **Analyze waveforms and results**  
+   - Use ISim to inspect signals  
+   - `assert` statements in testbenches verify correctness automatically
