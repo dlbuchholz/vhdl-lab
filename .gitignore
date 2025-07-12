@@ -1,0 +1,45 @@
+SE project files
+*.bit
+*.bin
+*.bgn
+*.cmd_log
+*.drc
+*.html
+*.lso
+*.mrp
+*.ncd
+*.ngc
+*.ngd
+*.ngr
+*.pad
+*.par
+*.pcf
+*.prj
+*.ptwx
+*.stx
+*.syr
+*.twr
+*.twx
+*.vcd
+*.xpi
+*.xst
+*.xwbt
+*.xise_autosave
+*.ise
+
+# ISim
+isim/
+*.wdb
+*.vcd
+*.lso
+*.log
+*.wcfg
+*.bak
+*.jou
+
+# Backup & OS clutter
+*~
+*.backup
+*.tmp
+.DS_Store
+Thumbs.db
