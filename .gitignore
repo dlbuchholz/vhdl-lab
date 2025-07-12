@@ -1,9 +1,12 @@
-SE project files
+ISE project files
 *.bit
 *.bin
 *.bgn
+*.cmd
 *.cmd_log
 *.drc
+*.exe
+*.gise
 *.html
 *.lso
 *.mrp
@@ -21,11 +24,16 @@ SE project files
 *.twr
 *.twx
 *.vcd
+*.xmsgs
 *.xpi
 *.xst
 *.xwbt
 *.xise_autosave
 *.ise
+__xps
+__xil
+*_xmsgs/
+iseconfig/
 
 # ISim
 isim/
@@ -36,6 +44,7 @@ isim/
 *.wcfg
 *.bak
 *.jou
+xilinxsim.ini
 
 # Backup & OS clutter
 *~
