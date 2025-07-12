@@ -60,6 +60,14 @@ ARCHITECTURE behavior OF tb_full_adder_behav IS
    -- appropriate port name 
  
    --constant <clock>_period : time := 10 ns;
+	
+	 -- Expected outputs
+    type logic_array is array (0 to 7) of std_logic;
+    constant inputs_a : logic_array := ('0', '0', '0', '0', '1', '1', '1', '1');
+	 constant inputs_b : logic_array := ('0', '0', '1', '1', '0', '0', '1', '1');
+	 constant inputs_cin : logic_array := ('0', '1', '0', '1', '0', '1', '0', '1');
+	 constant expected_sum : logic_array := ('0', '1', '1', '0', '1', '0', '0', '1');
+	 constant expected_cout : logic_array := ('0', '0', '0', '1', '0', '1', '1', '1');
  
 BEGIN
  
@@ -87,16 +95,20 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;
-		-- Test all 8 combinations of inputs a, b, and cin
-		a <= '0'; b <= '0'; cin <= '0'; wait for 20 ns;
-		a <= '0'; b <= '0'; cin <= '1'; wait for 20 ns;
-		a <= '0'; b <= '1'; cin <= '0'; wait for 20 ns;
-		a <= '0'; b <= '1'; cin <= '1'; wait for 20 ns;
-		a <= '1'; b <= '0'; cin <= '0'; wait for 20 ns;
-		a <= '1'; b <= '0'; cin <= '1'; wait for 20 ns;
-		a <= '1'; b <= '1'; cin <= '0'; wait for 20 ns;
-		a <= '1'; b <= '1'; cin <= '1'; wait for 20 ns;
---      wait for <clock>_period*10;
+		for i in 0 to 7 loop
+            a   <= inputs_a(i);
+            b   <= inputs_b(i);
+            cin <= inputs_cin(i);
+
+            wait for 20 ns;
+
+            assert sum = expected_sum(i)
+                report "SUM wrong at test " & integer'image(i) severity error;
+            assert cout = expected_cout(i)
+                report "COUT wrong at test " & integer'image(i) severity error;
+        end loop;
+
+        report "All behavioral full adder tests passed." severity note;
       wait;
    end process;
 
