@@ -12,7 +12,9 @@ It is part of university lab exercises on digital logic design. The code is inte
 - 3: 4-bit binary counter with active-low reset
    - 3a: `counter_sync4`: synchronous reset
    - 3b: `counter_async4`: asynchronous reset
-- 4: Shifter; Implements left/right shift by 1 based on control input `C(1:0)`: `C = "01"` → shift left
+- 4: 4-bit Shifter;
+Implements left/right shift by 1 based on control input `C(1:0)`:
+`C = "01"` → shift left
 `C = "10"` → shift right
 `C = "00"` or `"11"` → no shift
    - 4a (when else): `shifter_concurrent4`
