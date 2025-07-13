@@ -9,6 +9,20 @@ It is part of university lab exercises on digital logic design. The code is inte
 - 1b: 1-bit full adder (behavioral)
 - 1c: 1-bit full adder (structural using two half adders)
 - 2: 4-bit ripple-carry adder (structural using 1-bit full adders)
+- 3: 4-bit binary counter with active-low reset
+   - 3a: `counter_sync4`: synchronous reset
+   - 3b: `counter_async4`: asynchronous reset
+- 4: Shifter; Implements left/right shift by 1 based on control input `C(1:0)`: `C = "01"` → shift left
+`C = "10"` → shift right
+`C = "00"` or `"11"` → no shift
+   - 4a (when else): `shifter_concurrent4`
+   - 4b (if then else): `shifter_sequential4`
+   - 4c (with select when): `shifter_concurrent_select4`
+   - 4d (case): `shifter_sequential_case4`
+  
+
+
+
 
 ## Target FPGA Configuration
 
